@@ -1,3 +1,5 @@
+# pip install scapy
+
 import scapy.all as scapy
 
 def sniff_packets(interface, filter=None):

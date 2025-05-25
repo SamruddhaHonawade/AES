@@ -20,18 +20,18 @@ def decrypt_content(encrypted_data: bytes, key: bytes) -> bytes:
     return plain_text
 
 def main():
-    key = b'This is a key123'  # 16-byte key for AES-128
+    key = b'This is a key123'  
 
-    # Take user input from terminal
+   
     user_input = input("Enter the text to encrypt: ")
     original_content = user_input.encode()
 
-    # Encrypt the input
+  
     encrypted_content = encrypt_content(original_content, key)
     print("\nEncrypted content (hex):")
     print(encrypted_content.hex())
 
-    # Decrypt the content
+   
     decrypted_content = decrypt_content(encrypted_content, key)
     print("\nDecrypted content:")
     print(decrypted_content.decode())

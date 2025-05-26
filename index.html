@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeleLeak Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Sign In Page (shown by default) -->
+        <div id="signin-page" class="page">
+            <div class="auth-container">
+                <h1>TeleLeak Monitor</h1>
+                <p>Monitor Telegram channels for data leaks</p>
+                
+                <form id="signin-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign In</button>
+                </form>
+                
+                <div class="auth-footer">
+                    <p>Don't have an account? <a href="#" id="show-signup">Request access</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Dashboard (hidden by default) -->
+        <div id="dashboard-page" class="page hidden">
+            <header>
+                <div class="header-content">
+                    <h2>TeleLeak Monitor</h2>
+                    <div class="user-info">
+                        <span id="username-display">admin@company.com</span>
+                        <button id="signout-btn" class="btn btn-outline">Sign Out</button>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <div class="search-container">
+                    <h3>Monitor for Data Leaks</h3>
+                    <form id="search-form">
+                        <div class="search-box">
+                            <input type="text" id="keywords" placeholder="Enter keywords (comma separated)" required>
+                            <button type="submit" class="btn">Search</button>
+                        </div>
+                        <div class="search-options">
+                            <label>
+                                <input type="checkbox" id="exact-match"> Exact match
+                            </label>
+                            <label>
+                                <input type="checkbox" id="monitor-continuously"> Monitor continuously
+                            </label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="results-container">
+                    <div class="results-header">
+                        <h4>Search Results</h4>
+                        <div class="results-info">
+                            <span id="results-count">0</span> matches found
+                        </div>
+                    </div>
+                    
+                    <div id="results-list" class="results-list">
+                        <!-- Results will be inserted here by JavaScript -->
+                        <div class="empty-state">
+                            <p>Enter keywords and click search to monitor Telegram channels</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
